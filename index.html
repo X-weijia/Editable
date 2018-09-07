@@ -157,104 +157,41 @@
                 </tr>
             <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td><button class="re">删除</button></td></tr></tbody></table>
         </div>
-        
-        <script>
-            let td = document.querySelectorAll("td");
-            
-            td.forEach((v,i)=>{
-                if(v.lastElementChild){
-                        return;
-                    }
-                v.ondblclick = function(){
-                    
-                    let input = document.createElement("input");
-                    input.value = v.innerText;
-                    v.innerText = "";
-                    v.appendChild(input);
-                    input.focus();
-                    input.onblur = function(){
-                    // value = this.value;
-                    v.innerText = input.value;
-                }
-                }
-        })
-            let btn = document.querySelectorAll(".re");
-            let table = document.querySelector("table");
-            console.log(table);
-            btn.forEach((v)=>{
-                v.onclick = function (){
-                    table.firstElementChild.removeChild(v.parentNode.parentNode);
-                    // console.log(table.firstElementChild);
-                }
-            })
-            //增加一行
-            let add = document.querySelector(".a_b");
-            let box = document.querySelector(".box");
-            console.log(table);
-            box.onclick = function(event){
-                
-                if(event.target.className==add.className){
-                    let tr = document.createElement('tr');   
-                    let str = `<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td><button class="re">删除</button></td>`;
-                    tr.innerHTML = str;
-                    table.firstElementChild.appendChild(tr);
-                }else if(event.target.className=="re"){
-                    console.log(btn.className)
-                    table.firstElementChild.removeChild(event.target.parentNode.parentNode);
-                }
-            }
-            box.ondblclick = function(event){
-                if(event.target.lastElementChild){
-                        return;
-                    }
-                    let input = document.createElement("input");
-                    input.value = event.target.innerText;
-                    event.target.innerText = "";
-                    event.target.appendChild(input);
-                    input.focus();
-                    input.onblur = function(){
-                    // value = this.value;
-                    event.target.innerText = input.value;
-                }
-            }
-            
-        </script>
 </body>
 <script>
-    let td = document.querySelectorAll("td");
     
-    td.forEach((v,i)=>{
-        if(v.lastElementChild){
-                return;
-            }
-        v.ondblclick = function(){
+//     td.forEach((v,i)=>{
+//         if(v.lastElementChild){
+//                 return;
+//             }
+//         v.ondblclick = function(){
             
-            let input = document.createElement("input");
-            input.value = v.innerText;
-            v.innerText = "";
-            v.appendChild(input);
-            input.focus();
-            input.onblur = function(){
-            // value = this.value;
-            v.innerText = input.value;
-        }
-        }
-})
+//             let input = document.createElement("input");
+//             input.value = v.innerText;
+//             v.innerText = "";
+//             v.appendChild(input);
+//             input.focus();
+//             input.onblur = function(){
+//             // value = this.value;
+//             v.innerText = input.value;
+//         }
+//         }
+// })
+    // console.log(table);
+    // btn.forEach((v)=>{
+    //     v.onclick = function (){
+    //         table.firstElementChild.removeChild(v.parentNode.parentNode);
+    //         // console.log(table.firstElementChild);
+    //     }
+    // })
+//增加一行
+    let td = document.querySelectorAll("td");
     let btn = document.querySelectorAll("button");
     let table = document.querySelector("table");
-    // console.log(table);
-    btn.forEach((v)=>{
-        v.onclick = function (){
-            table.firstElementChild.removeChild(v.parentNode.parentNode);
-            // console.log(table.firstElementChild);
-        }
-    })
-//增加一行
-let add = document.querySelector(".a_b");
+    let add = document.querySelector(".a_b");
     let box = document.querySelector(".box");
     console.log(table);
     box.onclick = function(event){
-        
         if(event.target.className==add.className){
             let tr = document.createElement('tr');   
             let str = `<td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td><td>8</td><td>9</td><td>10</td><td><button class="re">删除</button></td>`;
